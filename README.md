@@ -1,2 +1,2 @@
 # Kubernetes al completo
-Todas las practicas realizadas en el curso "Kubernetes al completo" de Udemy
+Todas las practicas realizadas en este curso de 28 horas Kubernetes en Udemy.
