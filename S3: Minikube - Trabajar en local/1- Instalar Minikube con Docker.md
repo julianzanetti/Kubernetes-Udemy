@@ -1,4 +1,4 @@
-# Instalar Minikube con Docker
+# Instalar Minikube con Docker.
 ## Requisitos:
 1. 2 CPUs o mas.
 2. 2 GB minimo de ram.
