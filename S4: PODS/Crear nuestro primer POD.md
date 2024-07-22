@@ -41,3 +41,9 @@ kubectl proxy nombre_pod
 ```
 ![image](https://github.com/user-attachments/assets/2d351f9e-7381-47fd-9d1e-09dbd84b8546)
 ![image](https://github.com/user-attachments/assets/a34463a3-5859-44b4-a107-73b881671826)
+
+```
+kubectl port-forward nombre_pod puerto-ingreso:puerto-pod
+```
+![image](https://github.com/user-attachments/assets/da5d91e2-6eb1-44d1-8ed7-f6dc5db1db79)
+![image](https://github.com/user-attachments/assets/f9eb1dbb-6ee2-46a3-99c7-aa6b8e76a2ca)
