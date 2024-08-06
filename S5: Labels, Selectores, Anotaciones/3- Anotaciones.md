@@ -32,3 +32,6 @@ kubectl get pod tomcat4 -o jsonpath={.metadata.annotations} | jq
 ![image](https://github.com/user-attachments/assets/3a6b02cc-1dcc-49b5-989a-faf7b32fd0ee)
 
 Hay que tener instalado previamente jq
+
+## Visualizar las anotaciones en el Dashboard.
+![image](https://github.com/user-attachments/assets/829756f5-3e53-475f-8fd8-4ff293179f88)
