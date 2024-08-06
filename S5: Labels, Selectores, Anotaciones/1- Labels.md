@@ -64,3 +64,6 @@ kubectl label objeto nombre_objeto id-label-
 ### Eliminar label:
 ![image](https://github.com/user-attachments/assets/435bb0d8-6006-43c3-a5c6-41676c9c6035)
 ![image](https://github.com/user-attachments/assets/e90518a0-0e38-4728-accd-311ac0893b0f)
+
+## Visualizar labels en el Dashboard.
+![image](https://github.com/user-attachments/assets/95be2471-234d-4059-b3f7-763f32e0fd97)
