@@ -18,7 +18,6 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
-        resources:
         ports:
         - containerPort: 80
 ```
@@ -49,4 +48,19 @@ kubectl get pods,deploy,rs
 kubectl get pods -l app=nginx
 ```
 ![image](https://github.com/user-attachments/assets/c6503922-a43e-4867-a28a-b3a52fa5e436)
+
+### Otra forma
+```
+kubectl get pods,deploy,rs -l app=nginx
+```
+![image](https://github.com/user-attachments/assets/96bcf4dc-e0c1-4328-95ce-f706f7bf7f27)
+
+## Agregar una label al deploy y visualizarla.
+![image](https://github.com/user-attachments/assets/7d0f2342-63ad-4cbf-a0ca-cbcf39b981b9)
+```
+kubectl apply -f deploy_nginx.yaml
+kubectl get pods,deploy,rs -l app=nginx
+```
+![image](https://github.com/user-attachments/assets/679d0cfc-2107-4953-96b6-81132e657df8)
+
 
