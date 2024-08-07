@@ -63,4 +63,14 @@ kubectl get pods,deploy,rs -l app=nginx
 ```
 ![image](https://github.com/user-attachments/assets/679d0cfc-2107-4953-96b6-81132e657df8)
 
+## Editar la cantidad de replicas de nuestro deploy sin modificar el yaml.
+```
+kubectl edit deploy nginx-deploy
+```
+![image](https://github.com/user-attachments/assets/785620ad-c014-4c29-9dc8-6787afed0c2b)
+![image](https://github.com/user-attachments/assets/325473d0-94c6-4070-82c0-f7698c0658b2)
 
+```
+kubectl get deploy
+```
+![image](https://github.com/user-attachments/assets/44112937-3543-463f-ae70-41474a35b937)
