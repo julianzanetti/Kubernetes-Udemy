@@ -13,6 +13,6 @@ kubectl scale deploy nombre_deploy --replicas
 
 ## Aumentar/disminuir las replicas de un deploy segun su label.
 ```
-kubectl scale deploy nombre_deploy -l --replicas
+kubectl scale deploy nombre_deploy -l id-label=valor --replicas
 ```
 ![image](https://github.com/user-attachments/assets/d004abd3-c6fb-48f9-9a00-3e29fc88d005)
