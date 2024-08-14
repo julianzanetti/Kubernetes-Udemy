@@ -76,7 +76,7 @@ spec:
 ```
 ![image](https://github.com/user-attachments/assets/c251a123-2d2b-494a-887a-3e8f7dc312ab)
 
-## Levantamos nuestro servicio
+## Levantamos nuestro servicio.
 ```
 kubectl apply -f kube-web.yaml
 kubetcl get all
