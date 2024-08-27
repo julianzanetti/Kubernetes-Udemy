@@ -1,4 +1,4 @@
-# Ver, Crear y Borrar namespaces.
+# Ver, Crear, Borrar y Establecer namespaces.
 ## Ver nuestros namespaces.
 ```
 kubectl get namespaces
@@ -41,3 +41,15 @@ kubectl describe namespaces dev1
 kubectl delete namespaces n1
 ```
 ![image](https://github.com/user-attachments/assets/49243f9f-2661-42be-bb7c-4f014a4e8bd4)
+
+## Establecer una namespaces por defecto.
+```
+kubectl config set-context --current --namespace=nombre_namespaces
+```
+![image](https://github.com/user-attachments/assets/49e3656c-2280-47a6-94d2-b49be983fee9)
+
+```
+kubectl config view
+```
+![image](https://github.com/user-attachments/assets/33ad96d2-34aa-4a32-b713-7a2a0f85694f)
+
