@@ -95,3 +95,41 @@ mysql -u usudb -p kubernetes
 show databases;
 ```
 ![image](https://github.com/user-attachments/assets/fe24eff4-5d21-4325-8625-6aaab2345389)
+
+## Secrets y Ficheros.
+### Creamos un Secret a traves de un fichero.
+```
+kubectl create secret generic datos --from-file=datos.txt
+kubectl get secret
+```
+![image](https://github.com/user-attachments/assets/7007802a-1ddf-4763-b22b-faf3b3177352)
+
+### Creamos un POD y le pasamos como parametro el secret.
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+    - name: test-container
+      image: ubuntu
+      command: [ "/bin/sh", "-c", "sleep 1000000" ]
+      env:
+        - name: DATOS
+          valueFrom:
+            secretKeyRef:
+              name: datos
+              key: datos.txt
+  restartPolicy: Never
+```
+![image](https://github.com/user-attachments/assets/06f72505-54ea-4dac-83bc-5f159486e167)
+
+### Ingresmo al POD y verificamos que haya pasado la variable.
+```
+kubectl exec -it pod1 bash
+```
+![image](https://github.com/user-attachments/assets/84935240-f800-4ea9-87dd-db246f97cbe0)
+
+> [!IMPORTANT]
+> Recordar que al igual que el ConfigMap, de la forma --from-file nos queda como valor todo el contenido que se almacena dentro del fichero.txt
