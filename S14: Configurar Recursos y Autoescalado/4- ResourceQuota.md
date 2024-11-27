@@ -104,3 +104,73 @@ spec:
     pods: "5"
 ```
 ![image](https://github.com/user-attachments/assets/93abae4c-c228-4945-baee-e687c4368dec)
+
+# Trabajar con multiples Quotas.
+## Ejemplo de configuracion.
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pods-grandes
+spec:
+  hard:
+    requests.cpu: "100"
+    requests.memory: 500Mi
+    limits.cpu: "500"
+    limits.memory: 1Gi
+    pods: "5"
+  scopeSelector:
+    matchExpressions:
+    - operator : In
+      scopeName: PriorityClass
+      values: ["produccion"]
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pods-peques
+spec:
+  hard:
+    requests.cpu: "50"
+    requests.memory: 100Mi
+    limits.cpu: "100"
+    limits.memory: 200Mi
+    pods: "10"
+  scopeSelector:
+    matchExpressions:
+    - operator : In
+      scopeName: PriorityClass
+      values: ["desarrollo"]
+```
+
+> [!IMPORTANT]
+> Para que las Multiples quotas funcionen recordar que si o si ya tiene que existir las PriorityClass [Clase siguiente].
+> kubectl get pc
+
+![image](https://github.com/user-attachments/assets/4ca23fb9-3317-49f0-bf50-18425fcb851e)
+![image](https://github.com/user-attachments/assets/11874060-a7ba-405e-84f3-d9129ce869e3)
+
+
+## Ejemplo de Pod asignado a una quota a traves del priorityclass.
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx1
+  labels:
+    zone: prod
+    version: v1
+spec:
+  containers:
+   - name: nginx   
+     image: apasoft/nginx:v1
+     resources:
+      limits:
+        memory: "100Mi"
+        cpu: "1"
+      requests:
+        memory: "10Mi"
+        cpu: "0.5"
+  priorityClassName: desarrollo
+```
+![image](https://github.com/user-attachments/assets/d881d6d8-a773-48ce-97a4-ab916cf135f6)
