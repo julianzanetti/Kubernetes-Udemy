@@ -247,3 +247,10 @@ cd /home/kubernetes/datos/mysql
 ```
 ![image](https://github.com/user-attachments/assets/251e4a50-57a5-4a3d-81ee-0bad2cc8075e)
 ![image](https://github.com/user-attachments/assets/e61d0570-5c11-4318-be20-e3a194344061)
+
+## Escalar Wordpress.
+```
+kubectl scale --replicas=4 deploy wordpress
+```
+![image](https://github.com/user-attachments/assets/7aa5faf5-8ef2-4239-bef4-a7b6eb8c0588)
+![image](https://github.com/user-attachments/assets/edb4acc4-dd8e-4f9c-a748-125b0913b018)
