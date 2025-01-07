@@ -27,3 +27,84 @@ mount -t nfs ip-master:/home/kubernetes/datos/wordpress /home/kubernetes/datos/w
 ![image](https://github.com/user-attachments/assets/00e87b3f-7be3-4610-be05-2bff9fd73361)
 
 ## Crear el PV y PVC.
+### Ejemplo archivo PV para wordpress.
+```
+#########################
+## PV para WORDPRESS  ###
+########################
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-wordpress
+spec:
+  capacity:
+    storage: 25Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: wordpress
+  nfs:
+    path: /home/kubernetes/datos/wordpress
+    server: ip-master
+```
+
+### Ejemplo archivo PV para mysql.
+```
+#####################
+## PV para MySQL  ###
+#####################
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-mysql
+spec:
+  capacity:
+    storage: 25Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: mysql
+  nfs:
+    path: /home/kubernetes/datos/mysql
+    server: ip-master
+```
+![image](https://github.com/user-attachments/assets/9ce881de-0d06-4fb6-83ea-7dfc61dfbab9)
+
+### Ejemplo archivo PVC wordpress.
+```
+###########################
+## CLAIM PARA  WORDPRESS ##
+###########################
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-wordpress
+spec:
+  storageClassName: wordpress
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi
+```
+
+### Ejemplo archivo PVC para mysql.
+```
+######################
+## CLAIM PARA MYSQL ##
+######################
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-mysql
+spec:
+  storageClassName: mysql
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi
+```
+![image](https://github.com/user-attachments/assets/28e00164-2a04-435f-a690-7f40fa8c5dea)
+![image](https://github.com/user-attachments/assets/7580a82a-bc1a-403d-8cf9-03add4dc19a8)
+
