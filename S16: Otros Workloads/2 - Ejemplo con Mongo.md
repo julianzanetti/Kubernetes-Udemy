@@ -145,3 +145,25 @@ spec:
 ![image](https://github.com/user-attachments/assets/9ee533ea-aed7-461d-8626-491e4b7f1c68)
 ### Mongo-1
 ![image](https://github.com/user-attachments/assets/8d3008d6-d7ca-4a90-b006-9628bf5296dc)
+
+## Escalar, desescalar y borrar Pods.
+### Escalar
+```
+kubectl scale statefulset mongo --replicas=4
+```
+![image](https://github.com/user-attachments/assets/0c83afc2-fccc-4621-8fa4-472b5a8944b1)
+
+### Desescalar
+```
+kubectl scale statefulset mongo --replicas=3
+```
+![image](https://github.com/user-attachments/assets/d20f84b2-2ed6-4146-a2fb-853012f4abc0)
+
+### Borrar un Pod.
+```
+kubectl delete pod mongo-1
+```
+![image](https://github.com/user-attachments/assets/2255229e-5d16-4892-8b71-4f7a8c24f55a)
+> [!IMPORTANT]
+> Cuando borramos un Pod de tipo Stateful, este vuelve a recrear el mismo que borramos. No crea uno de nuevo como en los Deployments.
+> En este caso como el pod que eliminamos ya tiene vinculado un PV y PVC, el resultado es el mismo que ya teniamos.
