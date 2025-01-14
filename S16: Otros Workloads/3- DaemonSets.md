@@ -1,5 +1,5 @@
 # DaemonSets.
-### Crea un POD por cada nodo que tengamos en nuestro cluster.
+- Crea un POD por cada nodo que tengamos en nuestro cluster.
 ## Ejemplo de Uso.
 ### Verificamos nuestra cantidad de nodos.
 ```
