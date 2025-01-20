@@ -70,3 +70,6 @@ kubectl describe pod ID
 ```
 ![image](https://github.com/user-attachments/assets/8298eb3a-b839-4056-a3fc-96abf9e3ae86)
 
+- ### Pruba ingreso a la WEB:
+![image](https://github.com/user-attachments/assets/1001d45e-2878-49b7-a83d-89823edfc052)
+![image](https://github.com/user-attachments/assets/37016ed2-c2a2-4bfb-bf80-87dae0daa7b8)
