@@ -31,3 +31,11 @@ roleRef:
 
 ## Probamos visualizar el POD.
 ![image](https://github.com/user-attachments/assets/30c74290-60b4-44fd-b9d2-343c56e6edcd)
+
+## Tratemos de crear otro POD.
+```
+kubectl --kubeconfig=/home/Kubernetes/RBAC/certs/.kube/config run nginx1 --image=nginx -n ventas
+```
+![image](https://github.com/user-attachments/assets/54b707ac-a626-499a-a492-b69bee290902)
+> [!NOTE]
+> UsNo deja crear porque como vimos anteriormente el ROL solamente permite (get watch list) y no create.
