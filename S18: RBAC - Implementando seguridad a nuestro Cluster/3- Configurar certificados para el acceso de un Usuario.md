@@ -1,4 +1,6 @@
 # Configurar certificados para el acceso de un Usuario.
+## Todo esto se encuentra en la documentacion Oficial.
+- [Certificates and Certificate Signing Requests](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/)
 ## Creamos un directorio para almacenar todos los ficheros.
 ```
 mkdir certs
