@@ -5,31 +5,25 @@ mkdir certs
 cd certs
 ```
 
-##  Generamos una clave privada para un usuario llamado “desa1”. Se crea un fichero denominado desa1.key
+##  Generamos una clave privada para un usuario llamado “desa1”. Se crea un fichero denominado desa1.key.
 ```
 openssl genrsa -out desa1.key 4096
 ```
 
-##  Vamos a crear un archivo de configuración para gestionar la petición de solicitud de firma. Le llamamos “desa1.csr.cnf”.
+## Generar un CSR (Certificate Signing Request) para desa1.
 ```
-[ req ]
-default_bits = 2048
-prompt = no
-default_md = sha256
-distinguished_name = dn
-[ dn ]
-CN = desa1
-O = desarrollo
-[ v3_ext ]
-authorityKeyIdentifier=keyid,issuer:always
-basicConstraints=CA:FALSE
-keyUsage=keyEncipherment,dataEncipherment
-extendedKeyUsage=serverAuth,clientAuth
+openssl req -new -key /home/Kubernetes/RBAC/certs/desa1.key -out /home/Kubernetes/RBAC/certs/desa1.csr -subj "/CN=desa1/O=desarrollo"
 ```
 
-##  Ahora hacemos la solicitud de firma. Con este commando se genera un fichero “desa1.csr".
+##  Firmar el CSR con la CA de Kubernetes Usa la CA que Kubernetes utiliza para firmar el CSR:
 ```
-openssl req -config desa1.csr.cnf -new -key desa1.key -nodes -out desa1.csr
+openssl x509 -req -in /home/Kubernetes/RBAC/certs/desa1.csr \
+    -CA /home/julianzanetti/.minikube/ca.crt \
+    -CAkey /home/julianzanetti/.minikube/ca.key \
+    -CAcreateserial \
+    -out /home/Kubernetes/RBAC/certs/desa1.crt \
+    -days 365 \
+    -sha256
 ```
 ![image](https://github.com/user-attachments/assets/bd84e88e-b7ba-4b81-a690-feebfd97fcb3)
 
