@@ -1,4 +1,4 @@
-# Cluster de EKS.
+# Elastic Kubernetes - Cluster en EKS desde 0.
 ## Crear el stack de Red (VPC y Subredes).
 - Este es el primer paso para comenzar con nuestra creacion de un CLUSTER de EKS.
 - Tenemos que crear nuestra **`VPC`** con sus respectivas **`subredes`**, las puertas de enlace (**`Internet Gateway`**) y su tabla de enrutamiento.
