@@ -1,6 +1,6 @@
 # Secrets de tipo Docker.
 ## Creamos un secret con los datos de nuestro usuario al que vamos a ingresar al registro privado
-### En este caso es mi usuario de docker hub y el registro se encuentra alojado ahi.
+- En este caso es mi usuario de docker hub y el registro se encuentra alojado ahi.
 ```
 kubectl create secret docker-registry midocker --docker-server=docker.io --docker-username=user --docker-password=password --docker-email=mail
 ```
