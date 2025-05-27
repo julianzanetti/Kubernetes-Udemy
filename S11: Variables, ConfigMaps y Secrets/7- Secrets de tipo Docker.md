@@ -4,7 +4,6 @@
 ```
 kubectl create secret docker-registry midocker --docker-server=docker.io --docker-username=user --docker-password=password --docker-email=mail
 ```
-![image](https://github.com/user-attachments/assets/53f75edb-032d-4387-8486-a4af94a31652)
 
 ## Creamos un pod con la imagen que queremos descargar de nuestro registro privado, y vinculamos nuestro secret.
 ![image](https://github.com/user-attachments/assets/69b998b9-9975-4647-8aef-754cc4aa5d2d)
