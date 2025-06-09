@@ -1,6 +1,6 @@
 # Labels.
-### Vamos a realizar un ejemplo para visualizar nuestras etiquetas en un determinado objeto.
-## Creamos nuestro manifest.
+- Vamos a realizar un ejemplo para visualizar nuestras etiquetas en un determinado objeto.
+## Tomcat Manifest.
 ```
 apiVersion: v1
 kind: Pod
