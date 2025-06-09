@@ -42,13 +42,13 @@ kubectl label objeto nombre_objeto id-label=valor
 
 ## Modificar una label ya existente.
 ```
-kubectl label objeto nombre_objeto --overwrite id-label=valor
+kubectl label objeto nombre_objeto --overwrite clave=valor
 ```
 ![image](https://github.com/user-attachments/assets/bbd6e28c-e042-406d-a9cd-16565ccc01d3)
 
 ## Eliminar una etiqueta.
 ```
-kubectl label objeto nombre_objeto id-label-
+kubectl label objeto nombre_objeto clave-
 ```
 ![image](https://github.com/user-attachments/assets/f19d3e7a-ec0c-4239-9fdc-ecbc04ab5f85)
 
