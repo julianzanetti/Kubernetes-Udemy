@@ -42,7 +42,7 @@ spec:
 
 ## Vamos a levantar nuestro POD indicado en el yaml y verificamos que este levantado.
 ```
-kubectl create -f nombre.yaml
+kubectl apply -f nombre.yaml
 kubectl get pods
 ```
 ![image](https://github.com/user-attachments/assets/4e7b92e3-f146-48d5-9660-1f01e9b9fc02)
