@@ -1,7 +1,7 @@
 # PODS Multicontenedores.
 ## Creamos un Pod que contiene dos contenedores.
-### En este caso el primer contenedor tiene una imagen nginx que escucha por el puerto 80.
-### El segundo contenedor es un alpine que hace un ping c/ 10 segundos a nuestro POD.
+- En este caso el primer contenedor tiene una imagen nginx que escucha por el puerto 80.
+- El segundo contenedor es un alpine que hace un ping c/ 10 segundos a nuestro POD.
 ```
 apiVersion: v1
 kind: Pod
