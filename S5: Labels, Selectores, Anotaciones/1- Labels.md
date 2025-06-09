@@ -36,7 +36,7 @@ kubectl get pod tomcat -L nombre_etiqueta
 
 ## Vamos a agregar otra label a nuestro objeto.
 ```
-kubectl label objeto nombre_objeto id-label=valor
+kubectl label objeto nombre_objeto clave=valor
 ```
 ![image](https://github.com/user-attachments/assets/52978aee-8936-4779-9198-4e14411c3e7e)
 
